@@ -24,14 +24,16 @@ function attach_quizzo_link_to_wc_email( $order, $sent_to_admin, $plain_text, $e
 		// Get Quiz page ID, Quiz link
 		global $wp, $wpdb;
 		$sql = 'SELECT ID FROM ' . $wpdb->posts . ' WHERE post_status="publish" AND post_content LIKE "%' . $quiz_shortcode . '%"';
-		$page_id   = $wpdb->get_var( $sql );
-		$quiz_link = get_permalink( $page_id );
+		$page_id    = $wpdb->get_var( $sql );
+		$quiz_link  = get_permalink( $page_id );
+		$quiz_title = esc_html( get_the_title( $quiz_id ) );
 
 		// Attach if it is a Quizzo product
 		if ( $product->is_type('quizzo') ) {
 			$quiz_message = sprintf(
-				'<p>You can take your test quiz <a href="%1$s">here</a>.</p>',
-				$quiz_link
+				'<p><strong>You can take your test quiz here: <a href="%1$s">%2$s</a>.</strong></p>',
+				$quiz_link,
+				$quiz_title
 			);
 			$plain_text .= $quiz_message;
         }
