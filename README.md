@@ -2,6 +2,10 @@
 
 A simple plugin to help you set up WP Quizzes behind a WooCommerce PayWall.
 
+## Screenshots
+
+![alt text](https://github.com/chigozieorunta/woo-image-water-marker/blob/master/screenshots/screenshot-1.png)
+
 ## Features
 
 - Easy set up for Quizzes, Questions and Answers.
