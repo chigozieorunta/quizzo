@@ -16,19 +16,18 @@ $user_email   = $current_user->user_email;
 	<div>
 		<div id="user">
 			<p>
-				<?php echo esc_html( get_the_title( $_SESSION['quiz_id'] ) ); ?><br/>
+				<?php echo esc_html( get_the_title( $_SESSION['quiz_id'] ) ); ?><!--<br/>
 				<?php echo esc_html( $user_name ); ?> @ <?php echo date("D j F, Y O T"); ?><br/>
-				(<?php echo esc_html( $user_email ); ?>)
+				(<?php echo esc_html( $user_email ); ?>)-->
 			</p>
 		</div>
-		<div id="status"></div>
 
 		<?php if ( $_SESSION['question_counter'] < count( $_SESSION['questions_ids'] ) ) : ?>
 
 		<!--<div id="timer">20s</div>-->
 
 		<div id="question">
-			<h2><?php echo esc_html( get_the_title( $question_id ) ); ?></h2>
+			<p class="question_content"><span class="counter"><?php print $question_counter+1 ?>.</span><?php echo esc_html( get_the_title( $question_id ) ); ?></p>
 			<ol>
 				<?php foreach ( $question_options as $key => $value ) : ?>
 				<li>
@@ -39,7 +38,8 @@ $user_email   = $current_user->user_email;
 			</ol>
 			<span id="overlay"></span>
 		</div>
-		<button type="button" id="answer">Answer Question</button>
+		<div id="status"></div>
+		<button type="button" id="answer">Check My Answer</button>
 
 		<?php else: ?>
 
