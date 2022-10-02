@@ -8,7 +8,7 @@
     "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
-            "Chigozieorunta\\Quizzo\\": "src/"
+            "Quizzo\\": "src/"
         }
     },
     "authors": [
@@ -17,5 +17,7 @@
             "email": "chigozieorunta@yahoo.com"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^2.8"
+    }
 }
