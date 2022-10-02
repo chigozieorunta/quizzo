@@ -60,3 +60,11 @@ add_shortcode( 'quizzo', __NAMESPACE__ . '\quizzo_shortcode' );
 
 // Rewrite flush
 register_activation_hook( __FILE__, __NAMESPACE__ . '\quizzo_rewrite_flush' );
+
+// Require Autoload
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
+
+$plugin = \Quizzo\Quizzo::init();
+$plugin->activate();
