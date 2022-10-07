@@ -6,8 +6,6 @@
 namespace Quizzo;
 
 use Exception;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
 /**
  * Quizzo Class
@@ -49,6 +47,10 @@ class Quizzo {
 	 * @return void
 	 */
 	public function register_post_types(): void {
-		Post\PostFactory::init();
+		try {
+			Post\PostFactory::init();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Running Post Factory - ' . $e->getMessage() );
+		}
 	}
 }
