@@ -13,5 +13,8 @@
             "name": "Chigozie Orunta",
             "email": "chigozieorunta@yahoo.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "monolog/monolog": "^2.8"
+    }
 }
