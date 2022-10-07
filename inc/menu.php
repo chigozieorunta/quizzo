@@ -15,7 +15,7 @@ function register_quizzo_menu() {
 		PLUGIN_SLUG,
 		false,
 		'dashicons-edit-page',
-		''
+		99
 	);
 
 	add_submenu_page(
