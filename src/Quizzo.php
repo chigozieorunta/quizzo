@@ -5,6 +5,10 @@
 
 namespace Quizzo;
 
+use Exception;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 /**
  * Quizzo Class
  */
@@ -19,9 +23,9 @@ class Quizzo {
 	/**
 	 * Plugin Instance
 	 *
-	 * @return void
+	 * @return \Quizzo
 	 */
-	public static function init() {
+	public static function init(): object {
 		// Set, if not instantiated
 		if ( null === self::$instance ) {
 			self::$instance = new self();
@@ -30,7 +34,21 @@ class Quizzo {
 		return self::$instance;
 	}
 
-	public function activate() {
-		return 'Nothing';
+	/**
+	 * Activate Plugin
+	 *
+	 * @return void
+	 */
+	public function activate(): void {
+		add_action( 'init', [ $this, 'register_post_types' ] );
+	}
+
+	/**
+	 * Register Post types
+	 *
+	 * @return void
+	 */
+	public function register_post_types(): void {
+		Post\PostFactory::init();
 	}
 }
