@@ -20,7 +20,6 @@ class PostFactory {
 	 */
 	private static array $post_types = [
 		'Jesus' => 'Jesus',
-		'Quiz'  => 'Quiz'
 	];
 
 	/**
