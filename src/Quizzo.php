@@ -14,7 +14,7 @@ class Quizzo {
 	/**
 	 * Instance object constructor
 	 *
-	 * @var Quizzo
+	 * @var \Quizzo
 	 */
 	private static $instance;
 
