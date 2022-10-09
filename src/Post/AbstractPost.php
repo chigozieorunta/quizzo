@@ -62,11 +62,13 @@ abstract class AbstractPost {
 		$plural_label   = $this->get_plural_label();
 
 		$labels = [
-			'name'          => $plural_label,
-			'singular_name' => $singular_label,
-			'all_items'     => sprintf(
-				__( 'All %s', PLUGIN_DOMAIN ),
+			'name'          => sprintf(
+				__( '%s', PLUGIN_DOMAIN ),
 				$plural_label
+			),
+			'singular_name' => sprintf(
+				__( '%s', PLUGIN_DOMAIN ),
+				$singular_label
 			),
 			'add_new'       => sprintf(
 				__( 'Add New %s', PLUGIN_DOMAIN ),
@@ -76,15 +78,15 @@ abstract class AbstractPost {
 				__( 'Add New %s', PLUGIN_DOMAIN ),
 				$singular_label
 			),
-			'new_item'  => sprintf(
+			'new_item'      => sprintf(
 				__( 'New %s', PLUGIN_DOMAIN ),
 				$singular_label
 			),
-			'edit_item'  => sprintf(
+			'edit_item'     => sprintf(
 				__( 'Edit %s', PLUGIN_DOMAIN ),
 				$singular_label
 			),
-			'view_item'  => sprintf(
+			'view_item'     => sprintf(
 				__( 'View %s', PLUGIN_DOMAIN ),
 				$singular_label
 			),
@@ -92,7 +94,37 @@ abstract class AbstractPost {
 				__( 'Search %s', PLUGIN_DOMAIN ),
 				$plural_label
 			),
+			'menu_name'     => sprintf(
+				__( '%s', PLUGIN_DOMAIN ),
+				$plural_label
+			),
+		];
+
+		return $labels;
+	}
+
+	/**
+	 * Return post type options
+	 *
+	 * @return array
+	 */
+	public function get_options(): array {
+		return [
+			'labels'       => $this->get_labels(),
+			'public'       => true,
+			'has_archive'  => true,
+			'show_in_menu' => PLUGIN_SLUG,
+			'supports'     => array( 'title', 'thumbnail' ),
+			'show_in_rest' => false
 		];
 	}
 
+	/**
+	 * Register post type
+	 *
+	 * @return void
+	 */
+	public function register_post_type(): void {
+		register_post_type( $this->get_name(), $this->get_options() );
+	}
 }
