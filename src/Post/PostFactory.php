@@ -19,7 +19,7 @@ class PostFactory {
 	 * @var array
 	 */
 	private static array $post_types = [
-		'Jesus' => 'Jesus',
+		'Diagram' => 'Diagram',
 	];
 
 	/**
@@ -42,7 +42,8 @@ class PostFactory {
 	public static function create(string $post_type): void {
 		$class = __NAMESPACE__ . '\\' . $post_type;
 		if ( class_exists( $class ) ) {
-			new $class();
+			$object = new $class();
+			$object->register_post_type();
 		} else {
 			throw new RuntimeException( $class . ' does not exist.' );
 		}
