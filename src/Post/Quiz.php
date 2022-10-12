@@ -2,16 +2,19 @@
 
 namespace Quizzo\Post;
 
+/**
+ * Quiz class
+ */
 class Quiz extends AbstractPost {
 	/**
-	 * Post type
+	 * Post type.
 	 *
 	 * @var string
 	 */
 	public static $name = 'quiz';
 
 	/**
-	 * Return singular label
+	 * Return singular label.
 	 *
 	 * @return string
 	 */
@@ -20,7 +23,7 @@ class Quiz extends AbstractPost {
 	}
 
 	/**
-	 * Return plural label
+	 * Return plural label.
 	 *
 	 * @return string
 	 */
