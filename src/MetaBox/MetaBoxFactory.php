@@ -40,7 +40,7 @@ class MetaBoxFactory {
 	 * @return void
 	 */
 	public static function create(string $meta_box): void {
-		$class = __NAMESPACE__ . '\\' . $post_type;
+		$class = __NAMESPACE__ . '\\' . $meta_box;
 		if ( class_exists( $class ) ) {
 			$object = new $class();
 			$object->register_meta_box();
