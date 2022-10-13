@@ -23,7 +23,7 @@ class PostFactory {
 	];
 
 	/**
-	 * Set up the Quizzo post types
+	 * Set up the Quizzo post types.
 	 *
 	 * @return void
 	 */
@@ -34,7 +34,7 @@ class PostFactory {
 	}
 
 	/**
-	 * Create post type
+	 * Create post type.
 	 *
 	 * @param string $post_type
 	 * @return void
