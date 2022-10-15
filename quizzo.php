@@ -22,6 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 define( 'PLUGIN_SLUG', 'quizzo' );
 define( 'PLUGIN_ROLE', 'manage_options' );
 define( 'PLUGIN_DOMAIN', 'quizzo' );
+define( 'PLUGIN_OPTIONS',  [1 => 'A', 2 => 'B', 3 => 'C', 4 => 'D'] );
 
 // Get all files
 foreach( glob( __DIR__ . "/inc/*.php" ) as $file ) {
