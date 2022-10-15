@@ -19,6 +19,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Define constants
+define( 'PLUGIN_NAME', 'Quizzo' );
 define( 'PLUGIN_SLUG', 'quizzo' );
 define( 'PLUGIN_ROLE', 'manage_options' );
 define( 'PLUGIN_DOMAIN', 'quizzo' );
