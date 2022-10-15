@@ -8,7 +8,7 @@ namespace Quizzo;
  * @return void
  */
 function register_quizzo_menu() {
-	add_menu_page(
+	/*add_menu_page(
 		__( 'Quizzo', PLUGIN_DOMAIN ),
 		'Quizzo',
 		PLUGIN_ROLE,
@@ -16,14 +16,14 @@ function register_quizzo_menu() {
 		false,
 		'dashicons-edit-page',
 		99
-	);
+	);*/
 
-	add_submenu_page(
+	/*add_submenu_page(
 		PLUGIN_SLUG,
 		'Quizzo',
 		'Dashboard',
 		PLUGIN_ROLE,
 		PLUGIN_SLUG,
 		__NAMESPACE__ . '\quizzo_dashboard_cb',
-	);
+	);*/
 }

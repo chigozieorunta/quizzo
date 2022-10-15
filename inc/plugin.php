@@ -29,7 +29,7 @@ function register_quizzo_admin_css() {
  *
  * @return void
  */
-function register_quizzo_shortcode_css() {
+/*function register_quizzo_shortcode_css() {
 	wp_enqueue_script(
 		PLUGIN_SLUG,
 		plugin_dir_url( __DIR__ ) . './assets/js/dist/quizzo-shortcode.js',
@@ -45,7 +45,7 @@ function register_quizzo_shortcode_css() {
 		'plugin',
 		plugin_dir_url( __DIR__ ) . './assets/fonts/font.css'
 	);
-}
+}*/
 
 /**
  * Dashboard Callback Method

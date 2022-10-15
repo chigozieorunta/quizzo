@@ -15,12 +15,12 @@ function register_quizzo_meta_boxes() {
 		'question'
 	);
 
-	add_meta_box(
+	/*add_meta_box(
 		'quizzo_answer',
 		__( 'Answer', PLUGIN_DOMAIN ),
 		__NAMESPACE__ . '\quizzo_metabox_answer_cb',
 		'question'
-	);
+	);*/
 
 	add_meta_box(
 		'quizzo_questions',
@@ -115,7 +115,7 @@ function quizzo_metabox_shortcode_cb( $post ) {
  * @param object $post
  * @return void
  */
-function quizzo_metabox_answer_cb( $post ) {
+/*function quizzo_metabox_answer_cb( $post ) {
 	// Global options
 	global $quiz_options, $quiz_answer;
 
@@ -125,7 +125,7 @@ function quizzo_metabox_answer_cb( $post ) {
 
 	// Get Template part
 	load_template( dirname( __DIR__ ) . '/partials/cb-answer.php' );
-}
+}*/
 
 /**
  * Options Callback Method
