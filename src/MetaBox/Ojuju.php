@@ -34,9 +34,28 @@ class Ojuju extends AbstractMetaBox {
 	/**
 	 * Return callback.
 	 *
-	 * @return string
+	 * @param \WP_Post $post
+	 * @return void
 	 */
-	public function get_metabox_callback(): string {
-		return '';
+	public function get_metabox_callback( $post ): void {
+		// Get Quiz answer
+		$quiz_answer  = get_post_meta( $post->ID, 'quizzo_answer', true );
+
+		// Get Options
+		foreach ( PLUGIN_OPTIONS as $key => $value ) {
+			$options .= sprintf(
+				'<option value="%1$s" %3$s>
+					%2$s
+				</option>',
+				esc_attr( $key ),
+				esc_html( $value ),
+				selected( $quiz_answer, esc_attr( $key ), false )
+			);
+		}
+
+		echo sprintf(
+			'<select class="widefat" name="quizzo_answer">%1$s</select>',
+			$options
+		);
 	}
 }
