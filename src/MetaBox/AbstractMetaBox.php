@@ -54,9 +54,10 @@ abstract class AbstractMetaBox {
 	/**
 	 * Get Meta box callback.
 	 *
-	 * @return string
+	 * @param \WP_Post $post
+	 * @return void
 	 */
-	abstract public function get_metabox_callback(): string;
+	abstract public function get_metabox_callback( $post ): void;
 
 	/**
 	 * Register meta box.
