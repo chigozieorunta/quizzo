@@ -1,6 +1,6 @@
 {
     "name": "chigozieorunta/quizzo",
-    "description": "A simple plugin to help you set up WP Quizzes behind a WooCommerce PayWall.",
+    "description": "A simple plugin to help you set up WP Quizzes behind a WooCommerce Paywall.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
     "autoload": {
