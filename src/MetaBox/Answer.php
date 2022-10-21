@@ -32,6 +32,24 @@ class Answer extends AbstractMetaBox {
 	}
 
 	/**
+	 * Return meta box position.
+	 *
+	 * @return string
+	 */
+	public function get_position(): string {
+		return '';
+	}
+
+	/**
+	 * Return meta box priority.
+	 *
+	 * @return string
+	 */
+	public function get_priority(): string {
+		return '';
+	}
+
+	/**
 	 * Return callback.
 	 *
 	 * @param \WP_Post $post
@@ -40,6 +58,9 @@ class Answer extends AbstractMetaBox {
 	public function get_metabox_callback( $post ): void {
 		// Get Quiz answer
 		$quiz_answer  = get_post_meta( $post->ID, 'quizzo_answer', true );
+
+		// HTML Options
+		$options = '';
 
 		// Get Options
 		foreach ( PLUGIN_OPTIONS as $key => $value ) {
@@ -54,8 +75,19 @@ class Answer extends AbstractMetaBox {
 		}
 
 		echo sprintf(
-			'<select class="widefat" name="quizzo_answer">%1$s</select>',
+			'<select class="widefat" name="quizzo_answer" style="margin-top: 5px;">%1$s</select>',
 			$options
 		);
+	}
+
+	/**
+	 * Save Meta box.
+	 *
+	 * @param int $post_id
+	 * @return void
+	 */
+	public function save_meta_box( $post_id ): void {
+		// Update Meta box
+		update_post_meta( $post_id, 'quizzo_answer', $_POST['quizzo_answer'] );
 	}
 }
