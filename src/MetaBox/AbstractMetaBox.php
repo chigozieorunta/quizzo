@@ -26,6 +26,8 @@ abstract class AbstractMetaBox {
 		if ( ! isset( static::$name ) ) {
 			throw new LogicException( __CLASS__ . ' must define static property name' );
 		}
+		echo 'publish_' . $this->get_post_type();
+		add_action( 'publish_' . $this->get_post_type(), [ $this, 'save_meta_box' ] );
 	}
 
 	/**
@@ -60,6 +62,28 @@ abstract class AbstractMetaBox {
 	abstract public function get_metabox_callback( $post ): void;
 
 	/**
+	 * Get Meta box position.
+	 *
+	 * @return string
+	 */
+	abstract public function get_position(): string;
+
+	/**
+	 * Get Meta box priority.
+	 *
+	 * @return string
+	 */
+	abstract public function get_priority(): string;
+
+	/**
+	 * Save Meta box.
+	 *
+	 * @param int $post_id
+	 * @return void
+	 */
+	abstract public function save_meta_box( $post_id ): void;
+
+	/**
 	 * Register meta box.
 	 *
 	 * @return void
@@ -69,7 +93,9 @@ abstract class AbstractMetaBox {
 			PLUGIN_SLUG . '_' . $this->get_name(),
 			__( $this->get_heading(), PLUGIN_DOMAIN ),
 			[ $this, 'get_metabox_callback' ],
-			$this->get_post_type()
+			$this->get_post_type(),
+			$this->get_position() ?: 'advanced',
+			$this->get_priority() ?: 'default'
 		);
 	}
 }
