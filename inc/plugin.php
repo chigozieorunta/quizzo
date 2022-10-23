@@ -164,7 +164,7 @@ function register_quizzo_question_save_meta_box( $post_id ) {
 
 	// Update Question
 	update_post_meta( $post_id, 'quizzo_quiz_id', $_POST['quizzo_quiz_id'] );
-	update_post_meta( $post_id, 'quizzo_answer', $_POST['quizzo_answer'] );
+	//update_post_meta( $post_id, 'quizzo_answer', $_POST['quizzo_answer'] );
 
 	// Update Options
 	update_post_meta( $post_id, 'quizzo_option_1', $_POST['quizzo_option_1'] );
