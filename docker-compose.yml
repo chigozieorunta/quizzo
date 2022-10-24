@@ -25,7 +25,7 @@ services:
     volumes:
       - wp_data:/var/www/html/wp-content
       - .:/var/www/html/wp-content/plugins/quizzo
-      - ../debug:/var/www/html/
+      - ./wp/config.php:/var/www/html/wp-config.php
     restart: always
     environment:
       WORDPRESS_DB_USER: wordpress
