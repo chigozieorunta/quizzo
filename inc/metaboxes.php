@@ -38,23 +38,23 @@ function register_quizzo_meta_boxes() {
 		'high'
 	);
 
-	add_meta_box(
+	/*add_meta_box(
 		'quizzo_wc',
 		__( 'Quiz WooCommerce Paywall', PLUGIN_DOMAIN ),
 		__NAMESPACE__ . '\quizzo_metabox_wc_cb',
 		'quiz',
 		'side',
 		'high'
-	);
+	);*/
 
-	add_meta_box(
+	/*add_meta_box(
 		'quizzo_price',
 		__( 'Quiz Price', PLUGIN_DOMAIN ),
 		__NAMESPACE__ . '\quizzo_metabox_price_cb',
 		'quiz',
 		'side',
 		'high'
-	);
+	);*/
 
 	add_meta_box(
 		'quizzo_scores',
@@ -70,7 +70,7 @@ function register_quizzo_meta_boxes() {
  * @param object $post
  * @return void
  */
-function quizzo_metabox_wc_cb( $post ) {
+/*function quizzo_metabox_wc_cb( $post ) {
 	// Global options
 	global $quiz_wc_options, $quiz_wc;
 
@@ -80,7 +80,7 @@ function quizzo_metabox_wc_cb( $post ) {
 
 	// Get Template part
 	load_template( dirname( __DIR__ ) . '/partials/cb-wc.php' );
-}
+}*/
 
 /**
  * Price Callback Method
@@ -88,7 +88,7 @@ function quizzo_metabox_wc_cb( $post ) {
  * @param object $post
  * @return void
  */
-function quizzo_metabox_price_cb( $post ) {
+/*function quizzo_metabox_price_cb( $post ) {
 	// Global variable
 	global $price;
 
@@ -97,7 +97,7 @@ function quizzo_metabox_price_cb( $post ) {
 
 	// Get Template part
 	load_template( dirname( __DIR__ ) . '/partials/cb-price.php' );
-}
+}*/
 
 /**
  * Shortcode Callback Method
