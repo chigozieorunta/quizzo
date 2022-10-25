@@ -19,6 +19,9 @@ class PostFactory {
 	 * @var array
 	 */
 	private static array $post_types = [
+		'Quiz'     => 'Quiz',
+		'Question' => 'Question',
+		'Score'    => 'Score',
 		'Diagram' => 'Diagram',
 	];
 
