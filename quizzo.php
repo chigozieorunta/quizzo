@@ -36,12 +36,7 @@ add_filter( 'product_type_selector', 'add_quizzo_product_type' );
 add_action( 'woocommerce_quizzo_add_to_cart', 'add_to_cart_button' );
 add_action( 'woocommerce_email_order_details', __NAMESPACE__ . '\attach_quizzo_link_to_wc_email', 10, 4 );
 
-add_action( 'init', __NAMESPACE__ . '\register_quizzo_cpts' );
 add_action( 'init', __NAMESPACE__ . '\register_user_session' );
-
-add_action( 'admin_menu', __NAMESPACE__ . '\register_quizzo_menu', 9 );
-add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\register_quizzo_admin_css' );
-/*add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_quizzo_shortcode_css' );*/
 
 add_action( 'add_meta_boxes', __NAMESPACE__ . '\register_quizzo_meta_boxes' );
 add_action( 'publish_quiz', __NAMESPACE__ . '\register_quizzo_quiz_save_meta_box' );
