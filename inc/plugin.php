@@ -3,51 +3,6 @@
 namespace Quizzo;
 
 /**
- * Enqueue Quizzo Plugin Admin CSS
- *
- * @return void
- */
-function register_quizzo_admin_css() {
-	wp_enqueue_style(
-		PLUGIN_SLUG,
-		plugin_dir_url( __DIR__ ) . './assets/css/dist/quizzo-admin.css'
-	);
-
-	wp_enqueue_style(
-		'Inter',
-		'https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap'
-	);
-
-	wp_enqueue_style(
-		'plugin',
-		plugin_dir_url( __DIR__ ) . './assets/fonts/font.css'
-	);
-}
-
-/**
- * Enqueue Quizzo Plugin Shortocde CSS
- *
- * @return void
- */
-/*function register_quizzo_shortcode_css() {
-	wp_enqueue_script(
-		PLUGIN_SLUG,
-		plugin_dir_url( __DIR__ ) . './assets/js/dist/quizzo-shortcode.js',
-		array('jquery')
-	);
-
-	wp_enqueue_style(
-		PLUGIN_SLUG,
-		plugin_dir_url( __DIR__ ) . './assets/css/dist/quizzo-shortcode.css'
-	);
-
-	wp_enqueue_style(
-		'plugin',
-		plugin_dir_url( __DIR__ ) . './assets/fonts/font.css'
-	);
-}*/
-
-/**
  * Dashboard Callback Method
  *
  * @return void
@@ -104,8 +59,8 @@ function register_quizzo_quiz_save_meta_box( $post_id ) {
 	house_keeping( $post_id );
 
 	// Update Quiz
-	update_post_meta( $post_id, 'quizzo_price', $_POST['quizzo_price'] );
-	update_post_meta( $post_id, 'quizzo_wc', $_POST['quizzo_wc'] );
+	//update_post_meta( $post_id, 'quizzo_price', $_POST['quizzo_price'] );
+	//update_post_meta( $post_id, 'quizzo_wc', $_POST['quizzo_wc'] );
 
 	// Get WC Product ID
 	$product_id = get_post_meta( $post_id, 'quizzo_wc_product', true );
