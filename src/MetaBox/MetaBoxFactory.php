@@ -18,10 +18,8 @@ class MetaBoxFactory {
 	 *
 	 * @var array
 	 */
-	private static array $meta_boxes = [
-		'Answer'  => 'Answer',
-		'Paywall' => 'Paywall',
-		'Price'   => 'Price',
+	public static array $meta_boxes = [
+		'Answer'  => 'Answer'
 	];
 
 	/**
@@ -44,7 +42,7 @@ class MetaBoxFactory {
 	public static function create(string $meta_box): void {
 		$class = __NAMESPACE__ . '\\' . $meta_box;
 		if ( class_exists( $class ) ) {
-			$object = new $class();
+			$object = new $class;
 			$object->register_meta_box();
 		} else {
 			throw new RuntimeException( $class . ' does not exist.' );
