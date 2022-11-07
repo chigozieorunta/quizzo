@@ -42,6 +42,15 @@ class Quizzo {
 		add_action( 'add_meta_boxes', [ $this, 'register_meta_boxes' ] );
 		add_action( 'admin_menu', [ $this, 'register_menu' ], 9 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
+		$this->save_meta_boxes();
+	}
+
+	public function save_meta_boxes() {
+		foreach( MetaBox\MetaBoxFactory::$meta_boxes as $meta_box ) {
+			$class = __NAMESPACE__ . '\\MetaBox\\' . $meta_box;
+			$object = new $class;
+			add_action( 'publish_' . $object->get_post_type(), [ $object, 'save_meta_box' ], 10, 2 );
+		}
 	}
 
 	/**
