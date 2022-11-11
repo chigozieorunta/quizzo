@@ -22,7 +22,8 @@ class MetaBoxFactory {
 		'Answer'    => 'Answer',
 		'Paywall'   => 'Paywall',
 		'Price'     => 'Price',
-		'Shortcode' => 'Shortcode'
+		'Shortcode' => 'Shortcode',
+		'Questions'  => 'Questions'
 	];
 
 	/**
