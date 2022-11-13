@@ -86,7 +86,7 @@ class Answer extends AbstractMetaBox {
 	 * @param int $post_id
 	 * @return void
 	 */
-	public function save_meta_box( $post_id ): void {
+	public function save_meta_box( $post_id, $post ): void {
 		// Update Meta box
 		update_post_meta( $post_id, 'quizzo_answer', $_POST['quizzo_answer'] );
 	}
