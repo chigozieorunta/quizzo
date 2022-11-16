@@ -19,7 +19,10 @@ class MetaBoxFactory {
 	 * @var array
 	 */
 	public static array $meta_boxes = [
-		'Answer'  => 'Answer'
+		'Answer'    => 'Answer',
+		'Paywall'   => 'Paywall',
+		'Price'     => 'Price',
+		'Shortcode' => 'Shortcode'
 	];
 
 	/**
