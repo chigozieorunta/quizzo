@@ -26,8 +26,6 @@ abstract class AbstractMetaBox {
 		if ( ! isset( static::$name ) ) {
 			throw new LogicException( __CLASS__ . ' must define static property name' );
 		}
-		echo 'publish_' . $this->get_post_type();
-		add_action( 'publish_' . $this->get_post_type(), [ $this, 'save_meta_box' ] );
 	}
 
 	/**
@@ -81,7 +79,7 @@ abstract class AbstractMetaBox {
 	 * @param int $post_id
 	 * @return void
 	 */
-	abstract public function save_meta_box( $post_id ): void;
+	abstract public function save_meta_box( $post_id, $post ): void;
 
 	/**
 	 * Register meta box.
