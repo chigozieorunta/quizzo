@@ -69,9 +69,11 @@ class Price extends AbstractMetaBox {
 	 * Save Meta box.
 	 *
 	 * @param int $post_id
+	 * @param \WP_Post $post
 	 * @return void
 	 */
-	public function save_meta_box( $post_id ): void {
+	public function save_meta_box( $post_id, $post ): void {
 		// Update Meta box
+		update_post_meta( $post_id, 'quizzo_price', $_POST['quizzo_price'] );
 	}
 }
