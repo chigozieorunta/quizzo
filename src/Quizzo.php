@@ -42,10 +42,16 @@ class Quizzo {
 		add_action( 'add_meta_boxes', [ $this, 'register_meta_boxes' ] );
 		add_action( 'admin_menu', [ $this, 'register_menu' ], 9 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_assets' ] );
 		$this->save_meta_boxes();
 	}
 
-	public function save_meta_boxes() {
+	/**
+	 * Save Meta Boxes
+	 *
+	 * @return void
+	 */
+	public function save_meta_boxes(): void {
 		foreach( MetaBox\MetaBoxFactory::$meta_boxes as $meta_box ) {
 			$class = __NAMESPACE__ . '\\MetaBox\\' . $meta_box;
 			$object = new $class;
@@ -104,6 +110,20 @@ class Quizzo {
 			$assets->init();
 		} catch ( Exception $e ) {
 			wp_die( 'Error: Registering Assets - ' . $e->getMessage() );
+		}
+	}
+
+	/**
+	 * Register Admin Assets.
+	 *
+	 * @return void
+	 */
+	public function register_admin_assets(): void {
+		try {
+			$assets = Plugin\Assets::get_instance();
+			$assets->admin_init();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Registering Admin Assets - ' . $e->getMessage() );
 		}
 	}
 }
