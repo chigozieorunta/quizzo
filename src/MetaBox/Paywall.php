@@ -57,7 +57,7 @@ class Paywall extends AbstractMetaBox {
 	 */
 	public function get_metabox_callback( $post ): void {
 		// Get Quiz paywall
-		$quiz_paywall  = get_post_meta( $post->ID, 'quizzo_wc', true );
+		$quiz_paywall  = get_post_meta( $post->ID, 'quizzo_paywall', true );
 
 		// Comparison Array
 		define( 'PLUGIN_BOOL', [ 'No', 'Yes' ] );
@@ -87,9 +87,11 @@ class Paywall extends AbstractMetaBox {
 	 * Save Meta box.
 	 *
 	 * @param int $post_id
+	 * @param \WP_Post $post
 	 * @return void
 	 */
-	public function save_meta_box( $post_id ): void {
+	public function save_meta_box( $post_id, $post ): void {
 		// Update Meta box
+		update_post_meta( $post_id, 'quizzo_paywall', $_POST['quizzo_paywall'] );
 	}
 }
