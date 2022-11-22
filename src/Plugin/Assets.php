@@ -31,13 +31,12 @@ class Assets {
 		$this->register_scripts();
 	}
 
-	public function register_styles() {
-		// Plugin font
-		wp_enqueue_style(
-			'plugin-font',
-			plugin_dir_url( __DIR__ ) . '../assets/fonts/font.css'
-		);
+	public function admin_init() {
+		$this->admin_styles();
+		$this->admin_scripts();
+	}
 
+	public function register_styles() {
 		// Shortcode styling
 		wp_enqueue_style(
 			PLUGIN_SLUG,
@@ -52,5 +51,18 @@ class Assets {
 			plugin_dir_url( __DIR__ ) . '../assets/js/dist/quizzo-shortcode.js',
 			array('jquery')
 		);
+	}
+
+	public function admin_styles() {
+		// Admin styling
+		wp_enqueue_style(
+			PLUGIN_SLUG,
+			plugin_dir_url( __DIR__ ) . '../assets/css/dist/quizzo-admin.css'
+		);
+	}
+
+	public function admin_scripts() {
+		// Admin script
+		//...
 	}
 }
