@@ -84,6 +84,7 @@ class Answer extends AbstractMetaBox {
 	 * Save Meta box.
 	 *
 	 * @param int $post_id
+	 * @param \WP_Post $post
 	 * @return void
 	 */
 	public function save_meta_box( $post_id, $post ): void {
