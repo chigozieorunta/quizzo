@@ -1,4 +1,7 @@
 <?php
+/**
+ * @package Quizzo
+ */
 
 namespace Quizzo\Plugin;
 
