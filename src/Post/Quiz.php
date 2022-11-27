@@ -31,6 +31,11 @@ class Quiz extends AbstractPost {
 		return 'Quizzes';
 	}
 
+	/**
+	 * Save Post Type.
+	 *
+	 * @return void
+	 */
 	public function save_post_type(): void {
 	}
 }
