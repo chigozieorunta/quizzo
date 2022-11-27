@@ -4,14 +4,14 @@ namespace Quizzo\Post;
 
 class Score extends AbstractPost {
 	/**
-	 * Post type
+	 * Post type.
 	 *
 	 * @var string
 	 */
 	public static $name = 'score';
 
 	/**
-	 * Return singular label
+	 * Return singular label.
 	 *
 	 * @return string
 	 */
@@ -20,7 +20,7 @@ class Score extends AbstractPost {
 	}
 
 	/**
-	 * Return plural label
+	 * Return plural label.
 	 *
 	 * @return string
 	 */
@@ -28,6 +28,11 @@ class Score extends AbstractPost {
 		return 'Scores';
 	}
 
+	/**
+	 * Save Post Type.
+	 *
+	 * @return void
+	 */
 	public function save_post_type(): void {
 	}
 }
