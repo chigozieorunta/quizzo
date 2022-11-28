@@ -43,7 +43,21 @@ class Quizzo {
 		add_action( 'admin_menu', [ $this, 'register_menu' ], 9 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_assets' ] );
+		$this->save_post_types();
 		$this->save_meta_boxes();
+	}
+
+	/**
+	 * Save Post Types
+	 *
+	 * @return void
+	 */
+	public function save_post_types(): void {
+		foreach( Post\PostFactory::$post_types as $post_type ) {
+			$class = __NAMESPACE__ . '\\Post\\' . $post_type;
+			$object = new $class;
+			add_action( 'publish_' . $object::$name, [ $object, 'save_post_type' ], 10, 2 );
+		}
 	}
 
 	/**
