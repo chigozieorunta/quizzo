@@ -15,7 +15,12 @@ use LogicException;
  * @author Chigozie Orunta <chigozieorunta@yahoo.com>
  */
 abstract class AbstractPost {
+	/**
+	 * Handles publish_* housekeeping for different publish hooks.
+	 *
+	 */
 	use PostTrait;
+
 	/**
 	 * Abstract Post Constructor.
 	 *
