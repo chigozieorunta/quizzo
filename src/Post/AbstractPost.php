@@ -17,7 +17,6 @@ use LogicException;
 abstract class AbstractPost {
 	/**
 	 * Handles publish_* housekeeping for different publish hooks.
-	 *
 	 */
 	use PostTrait;
 
