@@ -15,7 +15,7 @@ use LogicException;
  * @author Chigozie Orunta <chigozieorunta@yahoo.com>
  */
 abstract class AbstractPost {
-
+	use PostTrait;
 	/**
 	 * Abstract Post Constructor.
 	 *
@@ -127,4 +127,11 @@ abstract class AbstractPost {
 	public function register_post_type(): void {
 		register_post_type( $this->get_name(), $this->get_options() );
 	}
+
+	/**
+	 * Save post type
+	 *
+	 * @return void
+	 */
+	abstract public function save_post_type(): void;
 }
