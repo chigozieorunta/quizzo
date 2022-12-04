@@ -26,16 +26,31 @@ class Assets {
 		return self::$instance;
 	}
 
+	/**
+	 * Register Styles and Scripts
+	 *
+	 * @return void
+	 */
 	public function init() {
 		$this->register_styles();
 		$this->register_scripts();
 	}
 
+	/**
+	 * Register Admin Styles and Scripts
+	 *
+	 * @return void
+	 */
 	public function admin_init() {
 		$this->admin_styles();
 		$this->admin_scripts();
 	}
 
+	/**
+	 * Plugin Styles
+	 *
+	 * @return void
+	 */
 	public function register_styles() {
 		// Shortcode styling
 		wp_enqueue_style(
@@ -44,6 +59,11 @@ class Assets {
 		);
 	}
 
+	/**
+	 * Plugin Scripts
+	 *
+	 * @return void
+	 */
 	public function register_scripts() {
 		// Shortcode script
 		wp_enqueue_script(
@@ -53,6 +73,11 @@ class Assets {
 		);
 	}
 
+	/**
+	 * Admin Styles
+	 *
+	 * @return void
+	 */
 	public function admin_styles() {
 		// Admin styling
 		wp_enqueue_style(
@@ -61,6 +86,11 @@ class Assets {
 		);
 	}
 
+	/**
+	 * Admin Scripts
+	 *
+	 * @return void
+	 */
 	public function admin_scripts() {
 		// Admin script
 		//...
