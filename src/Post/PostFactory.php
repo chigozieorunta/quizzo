@@ -51,6 +51,11 @@ class PostFactory {
 		}
 	}
 
+	/**
+	 * Get post types.
+	 *
+	 * @return void
+	 */
 	public static function get_post_types() {
 		return self::$post_types;
 	}
