@@ -30,4 +30,7 @@ class Quiz extends AbstractPost {
 	public function get_plural_label(): string {
 		return 'Quizzes';
 	}
+
+	public function save_post_type(): void {
+	}
 }
