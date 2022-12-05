@@ -27,4 +27,7 @@ class Score extends AbstractPost {
 	public function get_plural_label(): string {
 		return 'Scores';
 	}
+
+	public function save_post_type(): void {
+	}
 }
