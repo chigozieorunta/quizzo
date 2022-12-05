@@ -27,4 +27,7 @@ class Question extends AbstractPost {
 	public function get_plural_label(): string {
 		return 'Questions';
 	}
+
+	public function save_post_type(): void {
+	}
 }
