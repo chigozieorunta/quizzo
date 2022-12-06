@@ -3,7 +3,7 @@
 namespace Quizzo\MetaBox;
 
 /**
- * Price class
+ * Questions class
  */
 class Questions extends AbstractMetaBox {
 	/**
