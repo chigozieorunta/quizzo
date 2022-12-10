@@ -43,6 +43,8 @@ class Quizzo {
 		add_action( 'admin_menu', [ $this, 'register_menu' ], 9 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_assets' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'register_admin_assets' ] );
+		add_action( 'wp_ajax_save_user_answer', [ $this, 'register_ajax' ] );
+		add_action( 'wp_ajax_nopriv_save_user_answer', [ $this, 'register_ajax' ] );
 		$this->save_post_types();
 		$this->save_meta_boxes();
 	}
@@ -140,6 +142,20 @@ class Quizzo {
 			$assets->admin_init();
 		} catch ( Exception $e ) {
 			wp_die( 'Error: Registering Admin Assets - ' . $e->getMessage() );
+		}
+	}
+
+	/**
+	 * Register Ajax.
+	 *
+	 * @return void
+	 */
+	public function register_ajax(): void {
+		try {
+			$ajax = Plugin\Ajax::get_instance();
+			$ajax->init();
+		} catch ( Exception $e ) {
+			wp_die( 'Error: Registering Ajax - ' . $e->getMessage() );
 		}
 	}
 }
