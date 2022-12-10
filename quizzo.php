@@ -49,9 +49,6 @@ add_action( 'manage_score_posts_custom_column' , __NAMESPACE__ . '\register_scor
 add_filter( 'manage_question_posts_columns', __NAMESPACE__ . '\register_question_columns' );
 add_action( 'manage_question_posts_custom_column' , __NAMESPACE__ . '\register_question_column_data', 10, 2 );
 
-add_action( 'wp_ajax_nopriv_save_user_answer', __NAMESPACE__ . '\save_user_answer' );
-add_action( 'wp_ajax_save_user_answer', __NAMESPACE__ . '\save_user_answer' );
-
 // Plugin shortcode
 add_shortcode( 'quizzo', __NAMESPACE__ . '\quizzo_shortcode' );
 
