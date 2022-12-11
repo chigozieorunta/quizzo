@@ -50,4 +50,8 @@ class PostFactory {
 			throw new RuntimeException( $class . ' does not exist.' );
 		}
 	}
+
+	public static function get_post_types() {
+		return self::$post_types;
+	}
 }
