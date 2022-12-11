@@ -53,7 +53,8 @@ class Quizzo {
 	 * @return void
 	 */
 	public function save_post_types(): void {
-		foreach( Post\PostFactory::$post_types as $post_type ) {
+		$post_types = Post\PostFactory::get_post_types();
+		foreach( $post_types as $post_type ) {
 			$class = __NAMESPACE__ . '\\Post\\' . $post_type;
 			$object = new $class;
 			add_action( 'publish_' . $object::$name, [ $object, 'save_post_type' ], 10, 2 );
@@ -66,7 +67,8 @@ class Quizzo {
 	 * @return void
 	 */
 	public function save_meta_boxes(): void {
-		foreach( MetaBox\MetaBoxFactory::$meta_boxes as $meta_box ) {
+		$meta_boxes = MetaBox\MetaBoxFactory::get_meta_boxes();
+		foreach( $meta_boxes as $meta_box ) {
 			$class = __NAMESPACE__ . '\\MetaBox\\' . $meta_box;
 			$object = new $class;
 			add_action( 'publish_' . $object->get_post_type(), [ $object, 'save_meta_box' ], 10, 2 );
