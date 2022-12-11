@@ -18,7 +18,7 @@ class MetaBoxFactory {
 	 *
 	 * @var array
 	 */
-	public static array $meta_boxes = [
+	private static array $meta_boxes = [
 		'Answer'    => 'Answer',
 		'Paywall'   => 'Paywall',
 		'Price'     => 'Price',
@@ -52,5 +52,14 @@ class MetaBoxFactory {
 		} else {
 			throw new RuntimeException( $class . ' does not exist.' );
 		}
+	}
+
+	/**
+	 * Return meta boxes.
+	 *
+	 * @return array
+	 */
+	public static function get_meta_boxes() {
+		return self::$meta_boxes;
 	}
 }
