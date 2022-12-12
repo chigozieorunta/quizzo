@@ -22,7 +22,6 @@ class PostFactory {
 		'Quiz'     => 'Quiz',
 		'Question' => 'Question',
 		'Score'    => 'Score',
-		'Diagram' => 'Diagram',
 	];
 
 	/**
