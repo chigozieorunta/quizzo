@@ -3,7 +3,7 @@
 namespace Quizzo\MetaBox;
 
 /**
- * Price class
+ * Shortcode class
  */
 class Shortcode extends AbstractMetaBox {
 	/**
