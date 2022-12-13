@@ -3,16 +3,6 @@
 namespace Quizzo;
 
 /**
- * Dashboard Callback Method
- *
- * @return void
- */
-function quizzo_dashboard_cb() {
-	// Get Template part
-	load_template( dirname( __DIR__ ) . '/partials/cb-dashboard.php' );
-}
-
-/**
  * Flush Rewrite Cache
  *
  * @return void
@@ -118,14 +108,14 @@ function register_quizzo_question_save_meta_box( $post_id ) {
 	house_keeping( $post_id );
 
 	// Update Question
-	update_post_meta( $post_id, 'quizzo_quiz_id', $_POST['quizzo_quiz_id'] );
+	//update_post_meta( $post_id, 'quizzo_quiz_id', $_POST['quizzo_quiz_id'] );
 	//update_post_meta( $post_id, 'quizzo_answer', $_POST['quizzo_answer'] );
 
 	// Update Options
-	update_post_meta( $post_id, 'quizzo_option_1', $_POST['quizzo_option_1'] );
+	/*update_post_meta( $post_id, 'quizzo_option_1', $_POST['quizzo_option_1'] );
 	update_post_meta( $post_id, 'quizzo_option_2', $_POST['quizzo_option_2'] );
 	update_post_meta( $post_id, 'quizzo_option_3', $_POST['quizzo_option_3'] );
-	update_post_meta( $post_id, 'quizzo_option_4', $_POST['quizzo_option_4'] );
+	update_post_meta( $post_id, 'quizzo_option_4', $_POST['quizzo_option_4'] );*/
 }
 
 /**
